@@ -13,6 +13,9 @@ from .aiadvisor import AIAdvisor
 from .systeminfo import SystemInfo
 from .neoboot import NeoBootManager
 from .kadodoctor import KadoDoctor
+from .backup import BackupCenter
+from .restore import RestoreCenter
+from .cleaner import SmartCleaner
 
 class KadoPanelMain(Screen):
     skin = """
@@ -28,7 +31,7 @@ class KadoPanelMain(Screen):
 
     def __init__(self, session):
         Screen.__init__(self, session)
-        Logger.write("Kado Panel v0.3.0 Started")
+        Logger.write("Kado Panel v0.4.0 Started")
 
         self["title"] = Label("%s - %s" % (PANEL_NAME, EDITION))
         self["subtitle"] = Label("Welcome Captain Essam | %s" % VERSION)
@@ -38,6 +41,9 @@ class KadoPanelMain(Screen):
             "Health Check",
             "AI Advisor",
             "Kado Doctor",
+            "Backup Preview",
+            "Restore Center",
+            "Smart Cleaner Preview",
             "System Information",
             "System Report",
             "NeoBoot Manager",
@@ -47,7 +53,7 @@ class KadoPanelMain(Screen):
             "Exit"
         ]
         self["menu"] = MenuList(self.menu_items)
-        self["status"] = Label("Captain Essam Edition\n\nInitializing Kado AI Engine...\n\nSelect an option and press OK.")
+        self["status"] = Label("Captain Essam Edition\n\nKado Core + Safety Tools Ready.\n\nSelect an option and press OK.")
 
         self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.close}, -1)
 
@@ -71,8 +77,16 @@ class KadoPanelMain(Screen):
             self["status"].setText("Kado AI Advisor\n\n%s" % AIAdvisor().advise(health, neo, doctor))
 
         elif current == "Kado Doctor":
-            result = KadoDoctor().inspect_latest()
-            self["status"].setText(result.get("report", "No report."))
+            self["status"].setText(KadoDoctor().inspect_latest().get("report", "No report."))
+
+        elif current == "Backup Preview":
+            self["status"].setText(BackupCenter().preview())
+
+        elif current == "Restore Center":
+            self["status"].setText(RestoreCenter().preview())
+
+        elif current == "Smart Cleaner Preview":
+            self["status"].setText(SmartCleaner().preview())
 
         elif current == "System Information":
             info = SystemInfo().get_all()
@@ -97,7 +111,7 @@ class KadoPanelMain(Screen):
             self["status"].setText("\n".join(lines))
 
         elif current == "Smart Install Preview":
-            self["status"].setText("Smart Install Preview\n\nThis module will start after backup safety layer.\n\nNo install will run without Health Check + user confirmation.")
+            self["status"].setText("Smart Install Preview\n\nNo install will run without:\n1. Health Check\n2. Backup\n3. User confirmation")
 
         elif current == "View Logs":
             self["status"].setText("Kado Logs\n\n%s" % Logger.read_tail())

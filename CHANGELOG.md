@@ -1,15 +1,15 @@
 # Changelog
 
+## v0.4.0 Alpha
+- Added Backup Center foundation.
+- Added Backup Preview.
+- Added Restore Center foundation.
+- Added Smart Cleaner Preview.
+- Health Check checks safe backup storage.
+- AI Advisor improved for backup/cleaner workflow.
+
 ## v0.3.0 Alpha
 - Added Captain Essam Edition.
 - Added Lead Tester credit.
 - Added Kado Doctor foundation.
-- Added crash-log detection and basic pattern analysis.
-- Improved AI Advisor.
-
-## v0.2.0 Alpha
-- Improved Health Check.
-- Added System Information screen.
-- Added System Report creation.
-- Added NeoBoot Manager detection foundation.
-- Added View Logs.
+- Added crash-log detection.
