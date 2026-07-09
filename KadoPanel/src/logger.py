@@ -11,3 +11,11 @@ class Logger:
                 f.write("[%s] %s\n" % (time.strftime("%Y-%m-%d %H:%M:%S"), message))
         except Exception:
             pass
+
+    @staticmethod
+    def read_tail(lines=40):
+        try:
+            data = open(LOG_FILE, "r").read().splitlines()
+            return "\n".join(data[-lines:])
+        except Exception:
+            return "No log available."

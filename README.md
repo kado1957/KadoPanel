@@ -5,7 +5,7 @@ Professional Enigma2 Management Panel.
 **Developed by Captain Essam**
 
 ## Version
-v0.1.0 Alpha
+v0.2.0 Alpha
 
 ## Primary Test Platform
 - Receiver: VU+ Duo 4K SE
@@ -13,10 +13,11 @@ v0.1.0 Alpha
 - NeoBoot Target: 9.65
 - Python: 3
 
-## First Alpha Features
-- Main interface
-- Health Check
+## Features in v0.2.0 Alpha
+- Improved main interface
+- Advanced Health Check
 - AI Advisor rule engine
-- System detection
-- Logger
-- Safe Mode foundation
+- System Information screen
+- System Report generator
+- NeoBoot 9.65 detection foundation
+- View Logs option

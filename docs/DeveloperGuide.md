@@ -1,9 +1,8 @@
 # Kado Panel Developer Guide
 
-This alpha focuses on:
-- plugin entry point
-- main UI
-- health check
+v0.2.0 Alpha focuses on:
+- improved Health Check
+- system information
+- system report
 - AI advisor
-- image/system detection
-- logging
+- NeoBoot detection foundation

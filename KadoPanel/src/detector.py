@@ -16,8 +16,10 @@ class ImageDetector:
     def detect_image(self):
         data = self._read_first_existing([
             "/etc/issue", "/etc/image-version", "/etc/openbh-release",
-            "/etc/openatv-release", "/etc/openvix-release", "/etc/egami-version"
+            "/etc/openatv-release", "/etc/openvix-release", "/etc/egami-version",
+            "/etc/hostname"
         ]).lower()
+
         if "black hole" in data or "openbh" in data:
             return "OpenBH"
         if "openvix" in data:
@@ -32,8 +34,18 @@ class ImageDetector:
             return "PurE2"
         return "Unknown"
 
+    def detect_image_version(self):
+        for p in ["/etc/image-version", "/etc/issue", "/etc/openbh-release"]:
+            try:
+                if os.path.exists(p):
+                    text = open(p, "r").read().strip().replace("\n", " ")
+                    return text[:120]
+            except Exception:
+                pass
+        return "Unknown"
+
     def detect_model(self):
-        for p in ["/proc/stb/info/model", "/proc/stb/info/boxtype"]:
+        for p in ["/proc/stb/info/model", "/proc/stb/info/boxtype", "/proc/stb/info/vumodel"]:
             try:
                 if os.path.exists(p):
                     return open(p).read().strip()
@@ -41,11 +53,21 @@ class ImageDetector:
                 pass
         return "Unknown"
 
+    def detect_enigma(self):
+        try:
+            import enigma
+            return "Detected"
+        except Exception:
+            return "Unknown"
+
     def detect(self):
         return {
             "image": self.detect_image(),
+            "image_version": self.detect_image_version(),
             "model": self.detect_model(),
             "python": platform.python_version(),
             "machine": platform.machine(),
-            "system": platform.system()
+            "system": platform.system(),
+            "kernel": platform.release(),
+            "enigma2": self.detect_enigma()
         }

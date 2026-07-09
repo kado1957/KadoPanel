@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 class AIAdvisor:
-    def advise(self, health_result):
-        if health_result.get("ready"):
-            return "System Ready. You can continue safely."
-
+    def advise(self, health_result, neoboot=None):
         advice = []
+
+        if health_result.get("ready"):
+            advice.append("System Ready. You can continue safely.")
+
         for name, ok, value in health_result.get("checks", []):
             if ok:
                 continue
@@ -19,6 +20,12 @@ class AIAdvisor:
                 advice.append("RAM is low. Restart Enigma2 before installing packages.")
             elif name == "TMP":
                 advice.append("/tmp space is low. Clean temporary files.")
+            elif name == "Internet":
+                advice.append("Internet is not connected. Check network settings before updates.")
             else:
                 advice.append("%s needs attention: %s" % (name, value))
+
+        if neoboot and neoboot.get("installed"):
+            advice.append("NeoBoot detected. Be careful when syncing settings between images.")
+
         return "\n".join(advice) if advice else "Safe Mode recommended."
