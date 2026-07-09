@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 class AIAdvisor:
-    def advise(self, health_result, neoboot=None):
+    def advise(self, health_result, neoboot=None, doctor=None):
         advice = []
 
         if health_result.get("ready"):
@@ -27,5 +27,8 @@ class AIAdvisor:
 
         if neoboot and neoboot.get("installed"):
             advice.append("NeoBoot detected. Be careful when syncing settings between images.")
+
+        if doctor and doctor.get("latest_crash"):
+            advice.append("Crash log found. Use Kado Doctor to inspect possible causes.")
 
         return "\n".join(advice) if advice else "Safe Mode recommended."

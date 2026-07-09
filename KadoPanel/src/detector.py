@@ -53,13 +53,6 @@ class ImageDetector:
                 pass
         return "Unknown"
 
-    def detect_enigma(self):
-        try:
-            import enigma
-            return "Detected"
-        except Exception:
-            return "Unknown"
-
     def detect(self):
         return {
             "image": self.detect_image(),
@@ -68,6 +61,5 @@ class ImageDetector:
             "python": platform.python_version(),
             "machine": platform.machine(),
             "system": platform.system(),
-            "kernel": platform.release(),
-            "enigma2": self.detect_enigma()
+            "kernel": platform.release()
         }

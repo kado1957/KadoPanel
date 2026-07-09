@@ -50,7 +50,6 @@ class SystemInfo:
             "python": detector.get("python", "Unknown"),
             "machine": detector.get("machine", "Unknown"),
             "kernel": detector.get("kernel", "Unknown"),
-            "enigma2": detector.get("enigma2", "Unknown"),
             "flash_total_mb": self.get_total_mb("/"),
             "flash_free_mb": self.get_free_mb("/"),
             "tmp_total_mb": self.get_total_mb("/tmp"),
