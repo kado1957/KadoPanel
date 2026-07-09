@@ -1,15 +1,12 @@
 # Changelog
 
+## v0.5.0 Alpha
+- Added Backup Center Pro.
+- Enabled real backup creation.
+- Backup output: /media/hdd/KadoPanelBackup/KadoBackup-YYYYMMDD-HHMMSS.tar.gz
+- Backup includes /etc/enigma2, /etc/tuxbox, /usr/keys and related config paths when found.
+
 ## v0.4.0 Alpha
-- Added Backup Center foundation.
 - Added Backup Preview.
 - Added Restore Center foundation.
 - Added Smart Cleaner Preview.
-- Health Check checks safe backup storage.
-- AI Advisor improved for backup/cleaner workflow.
-
-## v0.3.0 Alpha
-- Added Captain Essam Edition.
-- Added Lead Tester credit.
-- Added Kado Doctor foundation.
-- Added crash-log detection.

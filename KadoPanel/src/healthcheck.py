@@ -14,6 +14,6 @@ class HealthCheck:
             ("RAM", info.get("mem_free_mb", 0) >= 40, "%s MB free" % info.get("mem_free_mb", 0)),
             ("TMP", info.get("tmp_free_mb", 0) >= 20, "%s MB free" % info.get("tmp_free_mb", 0)),
             ("Internet", bool(info.get("internet")), "Connected" if info.get("internet") else "Not connected"),
-            ("Backup Storage", info.get("hdd_free_mb", 0) >= 100 or info.get("usb_free_mb", 0) >= 100, "HDD/USB available" if (info.get("hdd_free_mb", 0) >= 100 or info.get("usb_free_mb", 0) >= 100) else "No safe backup storage"),
+            ("Backup Storage", info.get("hdd_free_mb", 0) >= 100, "%s MB free on /media/hdd" % info.get("hdd_free_mb", 0)),
         ]
         return {"ready": all(x[1] for x in checks[:7]), "checks": checks, "info": info}

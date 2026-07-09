@@ -3,10 +3,7 @@
 import os
 
 class SmartCleaner:
-    CLEAN_TARGETS = [
-        "/tmp",
-        "/home/root/logs",
-    ]
+    CLEAN_TARGETS = ["/tmp", "/home/root/logs"]
 
     def preview(self):
         lines = ["Smart Cleaner Preview", ""]

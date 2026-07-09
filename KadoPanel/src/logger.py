@@ -13,7 +13,7 @@ class Logger:
             pass
 
     @staticmethod
-    def read_tail(lines=50):
+    def read_tail(lines=60):
         try:
             data = open(LOG_FILE, "r").read().splitlines()
             return "\n".join(data[-lines:])

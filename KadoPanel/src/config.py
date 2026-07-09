@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 PANEL_NAME = "Kado Panel"
-VERSION = "0.4.0 Alpha"
+VERSION = "0.5.0 Alpha"
 AUTHOR = "Captain Essam"
 EDITION = "Captain Essam Edition"
 LEAD_TESTER = "Captain Essam (Kado1957)"

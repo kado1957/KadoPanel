@@ -31,7 +31,7 @@ class KadoPanelMain(Screen):
 
     def __init__(self, session):
         Screen.__init__(self, session)
-        Logger.write("Kado Panel v0.4.0 Started")
+        Logger.write("Kado Panel v0.5.0 Started")
 
         self["title"] = Label("%s - %s" % (PANEL_NAME, EDITION))
         self["subtitle"] = Label("Welcome Captain Essam | %s" % VERSION)
@@ -42,6 +42,7 @@ class KadoPanelMain(Screen):
             "AI Advisor",
             "Kado Doctor",
             "Backup Preview",
+            "Create Backup",
             "Restore Center",
             "Smart Cleaner Preview",
             "System Information",
@@ -53,7 +54,7 @@ class KadoPanelMain(Screen):
             "Exit"
         ]
         self["menu"] = MenuList(self.menu_items)
-        self["status"] = Label("Captain Essam Edition\n\nKado Core + Safety Tools Ready.\n\nSelect an option and press OK.")
+        self["status"] = Label("Captain Essam Edition\n\nBackup Center Pro is available.\n\nSelect an option and press OK.")
 
         self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.close}, -1)
 
@@ -81,6 +82,10 @@ class KadoPanelMain(Screen):
 
         elif current == "Backup Preview":
             self["status"].setText(BackupCenter().preview())
+
+        elif current == "Create Backup":
+            result = BackupCenter().create_backup()
+            self["status"].setText(result.get("message", "Unknown backup result."))
 
         elif current == "Restore Center":
             self["status"].setText(RestoreCenter().preview())

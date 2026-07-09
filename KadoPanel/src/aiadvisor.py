@@ -11,7 +11,7 @@ class AIAdvisor:
             if ok:
                 continue
             if name == "Backup Storage":
-                advice.append("No safe backup storage found. Connect or mount HDD/SSD before full backup.")
+                advice.append("Backup storage is not ready. Mount SSD/HDD as /media/hdd before creating backup.")
             elif name == "Image":
                 advice.append("Image is not fully supported yet. Use Safe Mode only.")
             elif name == "Python 3":
@@ -28,7 +28,7 @@ class AIAdvisor:
                 advice.append("%s needs attention: %s" % (name, value))
 
         if neoboot and neoboot.get("installed"):
-            advice.append("NeoBoot detected. Backup before syncing settings between images.")
+            advice.append("NeoBoot detected. Always create a backup before syncing settings between images.")
 
         if doctor and doctor.get("latest_crash"):
             advice.append("Crash log found. Use Kado Doctor to inspect possible causes.")
