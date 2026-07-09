@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 class AIAdvisor:
-    def advise(self, health_result, neoboot=None, doctor=None, update=None):
+    def advise(self, health_result, neoboot=None, doctor=None, update=None, installer=None):
         advice = []
 
         if health_result.get("ready"):
@@ -24,8 +24,6 @@ class AIAdvisor:
                 advice.append("/tmp space is low. Clean temporary files.")
             elif name == "Internet":
                 advice.append("Internet is not connected. Check network settings before updates.")
-            else:
-                advice.append("%s needs attention: %s" % (name, value))
 
         if neoboot and neoboot.get("installed"):
             advice.append("NeoBoot detected. Always create a backup before syncing settings between images.")
@@ -38,5 +36,9 @@ class AIAdvisor:
                 advice.append("New Kado Panel version available: %s" % update.get("remote_version"))
             elif update.get("ok"):
                 advice.append("Kado Panel is up to date.")
+
+        if installer:
+            advice.append("Compatible plugins detected: %s" % installer.get("count", 0))
+            advice.append("Installer is still in safe preview mode.")
 
         return "\n".join(advice) if advice else "Safe Mode recommended."

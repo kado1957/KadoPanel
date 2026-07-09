@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import time
-from .config import LOG_FILE
+from .config import LOG_FILE, INSTALL_LOG_FILE
 
 class Logger:
     @staticmethod
@@ -13,9 +13,25 @@ class Logger:
             pass
 
     @staticmethod
+    def install(message):
+        try:
+            with open(INSTALL_LOG_FILE, "a") as f:
+                f.write("[%s] %s\n" % (time.strftime("%Y-%m-%d %H:%M:%S"), message))
+        except Exception:
+            pass
+
+    @staticmethod
     def read_tail(lines=60):
         try:
             data = open(LOG_FILE, "r").read().splitlines()
             return "\n".join(data[-lines:])
         except Exception:
             return "No log available."
+
+    @staticmethod
+    def read_install_tail(lines=60):
+        try:
+            data = open(INSTALL_LOG_FILE, "r").read().splitlines()
+            return "\n".join(data[-lines:])
+        except Exception:
+            return "No install log available."

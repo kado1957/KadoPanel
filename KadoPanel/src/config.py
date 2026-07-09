@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 
 PANEL_NAME = "Kado Panel"
-VERSION = "0.6.0 Alpha"
+VERSION = "0.7.0 Alpha"
 AUTHOR = "Captain Essam"
 EDITION = "Captain Essam Edition"
 LEAD_TESTER = "Captain Essam (Kado1957)"
 
 LOG_FILE = "/tmp/KadoPanel.log"
+INSTALL_LOG_FILE = "/tmp/KadoPanel-Install.log"
 CACHE_DIR = "/tmp/kadopanel/"
 PROFILE_DIR = "/etc/kadopanel/profiles/"
 BACKUP_DIR = "/media/hdd/KadoPanelBackup/"

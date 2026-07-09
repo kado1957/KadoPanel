@@ -4,7 +4,7 @@ SUPPORTED = {
     "OpenBH": {
         "status": "primary",
         "tested": ["5.6.008"],
-        "safe_features": ["healthcheck", "systeminfo", "aiadvisor", "neoboot_detect", "report", "doctor", "backup_pro", "online_update_check"]
+        "safe_features": ["healthcheck", "systeminfo", "aiadvisor", "neoboot_detect", "report", "doctor", "backup_pro", "online_update_check", "plugin_installer_preview"]
     },
     "OpenViX": {"status": "planned", "safe_features": ["healthcheck", "systeminfo"]},
     "OpenATV": {"status": "planned", "safe_features": ["healthcheck", "systeminfo"]},

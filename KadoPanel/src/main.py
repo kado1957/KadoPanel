@@ -17,6 +17,7 @@ from .backup import BackupCenter
 from .restore import RestoreCenter
 from .cleaner import SmartCleaner
 from .updater import OnlineUpdater
+from .plugininstaller import SmartPluginInstaller
 
 class KadoPanelMain(Screen):
     skin = """
@@ -32,15 +33,16 @@ class KadoPanelMain(Screen):
 
     def __init__(self, session):
         Screen.__init__(self, session)
-        Logger.write("Kado Panel v0.6.0 Started")
+        Logger.write("Kado Panel v0.7.0 Started")
 
         self["title"] = Label("%s - %s" % (PANEL_NAME, EDITION))
         self["subtitle"] = Label("Welcome Captain Essam | %s" % VERSION)
-        self["footer"] = Label("Lead Tester: %s | Online Update Check" % LEAD_TESTER)
+        self["footer"] = Label("Lead Tester: %s | Smart Plugin Installer Preview" % LEAD_TESTER)
 
         self.menu_items = [
             "Health Check",
             "AI Advisor",
+            "Smart Plugin Installer",
             "Check Update",
             "Kado Doctor",
             "Backup Preview",
@@ -51,12 +53,13 @@ class KadoPanelMain(Screen):
             "System Report",
             "NeoBoot Manager",
             "Smart Install Preview",
+            "View Install Logs",
             "View Logs",
             "About",
             "Exit"
         ]
         self["menu"] = MenuList(self.menu_items)
-        self["status"] = Label("Captain Essam Edition\n\nOnline Update Check is available.\n\nSelect an option and press OK.")
+        self["status"] = Label("Captain Essam Edition\n\nSmart Plugin Installer Preview is available.\n\nSelect an option and press OK.")
 
         self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.close}, -1)
 
@@ -77,17 +80,15 @@ class KadoPanelMain(Screen):
             neo = NeoBootManager().detect()
             doctor = KadoDoctor().inspect_latest()
             update = OnlineUpdater().check()
-            self["status"].setText("Kado AI Advisor\n\n%s" % AIAdvisor().advise(health, neo, doctor, update))
+            installer = SmartPluginInstaller().preview()
+            self["status"].setText("Kado AI Advisor\n\n%s" % AIAdvisor().advise(health, neo, doctor, update, installer))
+
+        elif current == "Smart Plugin Installer":
+            self["status"].setText(SmartPluginInstaller().preview().get("text"))
 
         elif current == "Check Update":
             result = OnlineUpdater().check()
-            lines = ["Kado Online Update", ""]
-            lines.append("Current: %s" % result.get("current_version"))
-            lines.append("Remote : %s" % result.get("remote_version"))
-            lines.append("")
-            lines.append(result.get("message", "Unknown result"))
-            lines.append("")
-            lines.append("Note: This alpha checks updates only. Auto-install will be added later.")
+            lines = ["Kado Online Update", "", "Current: %s" % result.get("current_version"), "Remote : %s" % result.get("remote_version"), "", result.get("message", "Unknown result"), "", "Check only. Auto-install will be added later."]
             self["status"].setText("\n".join(lines))
 
         elif current == "Kado Doctor":
@@ -129,6 +130,9 @@ class KadoPanelMain(Screen):
 
         elif current == "Smart Install Preview":
             self["status"].setText("Smart Install Preview\n\nNo install will run without:\n1. Health Check\n2. Backup\n3. User confirmation")
+
+        elif current == "View Install Logs":
+            self["status"].setText("Kado Install Logs\n\n%s" % Logger.read_install_tail())
 
         elif current == "View Logs":
             self["status"].setText("Kado Logs\n\n%s" % Logger.read_tail())

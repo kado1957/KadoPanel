@@ -1,7 +1,7 @@
 # Kado Panel Developer Guide
 
-v0.6.0 Alpha adds Online Update Check:
-- updater.py
-- Check Update menu
-- version.json comparison
-- no auto-install yet
+v0.7.0 Alpha adds Smart Plugin Installer Preview:
+- plugininstaller.py
+- compatible plugin list by image
+- install logging
+- no real installation yet

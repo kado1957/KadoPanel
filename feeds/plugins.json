@@ -1,0 +1,66 @@
+{
+    "version": "0.7.0 Alpha",
+    "plugins": [
+        {
+            "name": "AjPanel",
+            "category": "Panel",
+            "images": [
+                "OpenBH",
+                "OpenATV",
+                "OpenViX",
+                "Egami"
+            ],
+            "status": "planned"
+        },
+        {
+            "name": "ElieSat Panel",
+            "category": "Panel",
+            "images": [
+                "OpenBH",
+                "OpenATV",
+                "OpenViX"
+            ],
+            "status": "planned"
+        },
+        {
+            "name": "Email Panel PRO",
+            "category": "Panel",
+            "images": [
+                "OpenBH",
+                "OpenATV",
+                "OpenViX"
+            ],
+            "status": "planned"
+        },
+        {
+            "name": "ExtraEvent",
+            "category": "Plugin",
+            "images": [
+                "OpenBH",
+                "OpenATV",
+                "OpenViX"
+            ],
+            "status": "planned"
+        },
+        {
+            "name": "OSCam",
+            "category": "SoftCam",
+            "images": [
+                "OpenBH",
+                "OpenATV",
+                "OpenViX",
+                "Egami"
+            ],
+            "status": "planned"
+        },
+        {
+            "name": "NCam",
+            "category": "SoftCam",
+            "images": [
+                "OpenBH",
+                "OpenATV"
+            ],
+            "status": "planned"
+        }
+    ]
+}
