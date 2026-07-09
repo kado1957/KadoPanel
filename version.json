@@ -1,0 +1,7 @@
+{
+    "name": "Kado Panel",
+    "version": "0.1.0 Alpha",
+    "author": "Captain Essam",
+    "primary_test_image": "Open Black Hole 5.6.008",
+    "neoboot_target": "9.65"
+}
