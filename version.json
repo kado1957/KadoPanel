@@ -1,10 +1,10 @@
 {
     "name": "Kado Panel",
-    "version": "0.7.0 Alpha",
+    "version": "0.8.0 Alpha",
     "edition": "Captain Essam Edition",
     "author": "Captain Essam",
     "lead_tester": "Captain Essam (Kado1957)",
     "primary_test_image": "Open Black Hole 5.6.008",
     "neoboot_target": "9.65",
-    "plugin_installer": "preview-only"
+    "plugin_store": "preview-only"
 }

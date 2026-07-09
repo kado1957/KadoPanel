@@ -25,21 +25,6 @@ class KadoDoctor:
         candidates.sort(reverse=True)
         return candidates[0][1]
 
-    def analyze_text(self, text):
-        rules = [
-            ("ModuleNotFoundError", "Missing Python module. Install the required dependency or remove the plugin causing it."),
-            ("ImportError", "Plugin dependency problem. Check the plugin and required libraries."),
-            ("skin.SkinError", "Skin compatibility issue. Switch to default skin or remove the last skin installed."),
-            ("No space left on device", "Flash is full. Clean temporary files or remove unused plugins."),
-            ("Segmentation fault", "Native binary crash. Check emu/plugin compatibility with your image."),
-            ("Traceback", "Python exception detected. Check the last plugin shown in the traceback."),
-        ]
-        findings = []
-        for key, advice in rules:
-            if key.lower() in text.lower():
-                findings.append((key, advice))
-        return findings
-
     def inspect_latest(self):
         latest = self.find_latest_crash()
         if not latest:
@@ -48,7 +33,8 @@ class KadoDoctor:
             data = open(latest, "r", errors="ignore").read()[-12000:]
         except TypeError:
             data = open(latest, "r").read()[-12000:]
-        findings = self.analyze_text(data)
+        rules = [("ModuleNotFoundError", "Missing Python module."), ("ImportError", "Plugin dependency problem."), ("skin.SkinError", "Skin compatibility issue."), ("No space left on device", "Flash is full."), ("Segmentation fault", "Native binary crash."), ("Traceback", "Python exception detected.")]
+        findings = [(k, a) for k, a in rules if k.lower() in data.lower()]
         lines = ["Kado Doctor Crash Report", "=" * 32, "Latest crash: %s" % latest, ""]
         if findings:
             for key, advice in findings:
@@ -57,7 +43,6 @@ class KadoDoctor:
                 lines.append("")
         else:
             lines.append("No known pattern detected yet.")
-            lines.append("Send the crash log for deeper analysis.")
         try:
             open(CRASH_REPORT_FILE, "w").write("\n".join(lines))
             Logger.write("Crash report created: %s" % CRASH_REPORT_FILE)

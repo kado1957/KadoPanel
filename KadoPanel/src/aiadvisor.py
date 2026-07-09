@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 class AIAdvisor:
-    def advise(self, health_result, neoboot=None, doctor=None, update=None, installer=None):
+    def advise(self, health_result, neoboot=None, doctor=None, update=None, store=None):
         advice = []
 
         if health_result.get("ready"):
@@ -11,22 +11,18 @@ class AIAdvisor:
             if ok:
                 continue
             if name == "Backup Storage":
-                advice.append("Backup storage is not ready. Mount SSD/HDD as /media/hdd before creating backup.")
+                advice.append("Mount SSD/HDD as /media/hdd before creating backup.")
             elif name == "Image":
                 advice.append("Image is not fully supported yet. Use Safe Mode only.")
             elif name == "Python 3":
                 advice.append("Python 3 is required for Kado Panel.")
             elif name == "Flash":
                 advice.append("Flash space is low. Clean temporary files or remove unused plugins.")
-            elif name == "RAM":
-                advice.append("RAM is low. Restart Enigma2 before installing packages.")
-            elif name == "TMP":
-                advice.append("/tmp space is low. Clean temporary files.")
             elif name == "Internet":
-                advice.append("Internet is not connected. Check network settings before updates.")
+                advice.append("Internet is not connected. Check network before updates.")
 
         if neoboot and neoboot.get("installed"):
-            advice.append("NeoBoot detected. Always create a backup before syncing settings between images.")
+            advice.append("NeoBoot detected. Backup before syncing settings between images.")
 
         if doctor and doctor.get("latest_crash"):
             advice.append("Crash log found. Use Kado Doctor to inspect possible causes.")
@@ -37,8 +33,8 @@ class AIAdvisor:
             elif update.get("ok"):
                 advice.append("Kado Panel is up to date.")
 
-        if installer:
-            advice.append("Compatible plugins detected: %s" % installer.get("count", 0))
-            advice.append("Installer is still in safe preview mode.")
+        if store:
+            advice.append("Plugin Store categories: %s" % store.get("categories_count", 0))
+            advice.append("Compatible store items: %s" % store.get("items_count", 0))
 
         return "\n".join(advice) if advice else "Safe Mode recommended."

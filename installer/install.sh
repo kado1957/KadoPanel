@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "Installing Kado Panel v0.7.0 Alpha..."
+echo "Installing Kado Panel v0.8.0 Alpha..."
 PLUGIN_DIR="/usr/lib/enigma2/python/Plugins/Extensions/KadoPanel"
 mkdir -p "$PLUGIN_DIR"
 cp -r KadoPanel/src/* "$PLUGIN_DIR/"

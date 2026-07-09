@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
 
 SUPPORTED = {
-    "OpenBH": {
-        "status": "primary",
-        "tested": ["5.6.008"],
-        "safe_features": ["healthcheck", "systeminfo", "aiadvisor", "neoboot_detect", "report", "doctor", "backup_pro", "online_update_check", "plugin_installer_preview"]
-    },
-    "OpenViX": {"status": "planned", "safe_features": ["healthcheck", "systeminfo"]},
-    "OpenATV": {"status": "planned", "safe_features": ["healthcheck", "systeminfo"]},
-    "Egami": {"status": "planned", "safe_features": ["healthcheck", "systeminfo"]},
-    "OpenPLi": {"status": "planned", "safe_features": ["healthcheck", "systeminfo"]},
-    "PurE2": {"status": "planned", "safe_features": ["healthcheck", "systeminfo"]},
+    "OpenBH": {"status": "primary", "tested": ["5.6.008"]},
+    "OpenViX": {"status": "planned"},
+    "OpenATV": {"status": "planned"},
+    "Egami": {"status": "planned"},
+    "OpenPLi": {"status": "planned"},
+    "PurE2": {"status": "planned"},
 }
 
 def is_supported(image):

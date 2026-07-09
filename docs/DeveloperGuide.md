@@ -1,7 +1,8 @@
 # Kado Panel Developer Guide
 
-v0.7.0 Alpha adds Smart Plugin Installer Preview:
-- plugininstaller.py
-- compatible plugin list by image
-- install logging
-- no real installation yet
+v0.8.0 Alpha adds Plugin Store foundation:
+- pluginstore.py
+- categories
+- item details
+- image compatibility
+- no real install yet

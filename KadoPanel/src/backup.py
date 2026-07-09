@@ -28,14 +28,10 @@ class BackupCenter:
                 os.makedirs(BACKUP_DIR)
         except Exception as e:
             return {"ok": False, "message": "Cannot create backup directory: %s" % e}
-
         items = self.available_items()
         if not items:
             return {"ok": False, "message": "No backup items found."}
-
-        stamp = time.strftime("%Y%m%d-%H%M%S")
-        target = os.path.join(BACKUP_DIR, "KadoBackup-%s.tar.gz" % stamp)
-
+        target = os.path.join(BACKUP_DIR, "KadoBackup-%s.tar.gz" % time.strftime("%Y%m%d-%H%M%S"))
         try:
             with tarfile.open(target, "w:gz") as tar:
                 for item in items:

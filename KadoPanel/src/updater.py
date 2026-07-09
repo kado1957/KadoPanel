@@ -12,8 +12,7 @@ from .logger import Logger
 class OnlineUpdater:
     def _normalize(self, value):
         try:
-            main = value.split()[0]
-            return [int(x) for x in main.split(".")]
+            return [int(x) for x in value.split()[0].split(".")]
         except Exception:
             return [0, 0, 0]
 

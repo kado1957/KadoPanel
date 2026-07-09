@@ -1,12 +1,12 @@
 # Changelog
 
+## v0.8.0 Alpha
+- Added Plugin Store foundation.
+- Added pluginstore.py.
+- Added Plugin Store menu.
+- Added Plugin Details menu.
+- Added feeds/pluginstore.json.
+
 ## v0.7.0 Alpha
 - Added Smart Plugin Installer Preview.
 - Added plugininstaller.py.
-- Added compatible plugin list by image.
-- Added install log file.
-- Added View Install Logs menu.
-
-## v0.6.0 Alpha
-- Added Online Update Check.
-- Added updater.py.

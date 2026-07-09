@@ -1,6 +1,14 @@
 {
     "version": "0.8.0 Alpha",
-    "plugins": [
+    "categories": [
+        "Panels",
+        "Plugins",
+        "Softcams",
+        "IPTV",
+        "Tools",
+        "Skins"
+    ],
+    "items": [
         {
             "name": "AjPanel",
             "category": "Panels",

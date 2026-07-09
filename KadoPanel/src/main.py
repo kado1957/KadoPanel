@@ -17,7 +17,7 @@ from .backup import BackupCenter
 from .restore import RestoreCenter
 from .cleaner import SmartCleaner
 from .updater import OnlineUpdater
-from .plugininstaller import SmartPluginInstaller
+from .pluginstore import PluginStore
 
 class KadoPanelMain(Screen):
     skin = """
@@ -33,16 +33,17 @@ class KadoPanelMain(Screen):
 
     def __init__(self, session):
         Screen.__init__(self, session)
-        Logger.write("Kado Panel v0.7.0 Started")
+        Logger.write("Kado Panel v0.8.0 Started")
 
         self["title"] = Label("%s - %s" % (PANEL_NAME, EDITION))
         self["subtitle"] = Label("Welcome Captain Essam | %s" % VERSION)
-        self["footer"] = Label("Lead Tester: %s | Smart Plugin Installer Preview" % LEAD_TESTER)
+        self["footer"] = Label("Lead Tester: %s | Plugin Store Foundation" % LEAD_TESTER)
 
         self.menu_items = [
             "Health Check",
             "AI Advisor",
-            "Smart Plugin Installer",
+            "Plugin Store",
+            "Plugin Details",
             "Check Update",
             "Kado Doctor",
             "Backup Preview",
@@ -59,7 +60,7 @@ class KadoPanelMain(Screen):
             "Exit"
         ]
         self["menu"] = MenuList(self.menu_items)
-        self["status"] = Label("Captain Essam Edition\n\nSmart Plugin Installer Preview is available.\n\nSelect an option and press OK.")
+        self["status"] = Label("Captain Essam Edition\n\nPlugin Store Foundation is available.\n\nSelect an option and press OK.")
 
         self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.close}, -1)
 
@@ -80,11 +81,14 @@ class KadoPanelMain(Screen):
             neo = NeoBootManager().detect()
             doctor = KadoDoctor().inspect_latest()
             update = OnlineUpdater().check()
-            installer = SmartPluginInstaller().preview()
-            self["status"].setText("Kado AI Advisor\n\n%s" % AIAdvisor().advise(health, neo, doctor, update, installer))
+            store = PluginStore().store_summary()
+            self["status"].setText("Kado AI Advisor\n\n%s" % AIAdvisor().advise(health, neo, doctor, update, store))
 
-        elif current == "Smart Plugin Installer":
-            self["status"].setText(SmartPluginInstaller().preview().get("text"))
+        elif current == "Plugin Store":
+            self["status"].setText(PluginStore().store_summary().get("text"))
+
+        elif current == "Plugin Details":
+            self["status"].setText(PluginStore().item_details())
 
         elif current == "Check Update":
             result = OnlineUpdater().check()
