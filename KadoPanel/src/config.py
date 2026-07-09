@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 PANEL_NAME = "Kado Panel"
-VERSION = "0.5.0 Alpha"
+VERSION = "0.6.0 Alpha"
 AUTHOR = "Captain Essam"
 EDITION = "Captain Essam Edition"
 LEAD_TESTER = "Captain Essam (Kado1957)"
@@ -18,3 +18,4 @@ PRIMARY_TEST_IMAGE = "Open Black Hole 5.6.008"
 NEOBOOT_TARGET = "9.65"
 
 GITHUB_REPOSITORY = "https://github.com/kado1957/KadoPanel"
+REMOTE_VERSION_URL = "https://raw.githubusercontent.com/kado1957/KadoPanel/main/version.json"

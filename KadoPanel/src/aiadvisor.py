@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 class AIAdvisor:
-    def advise(self, health_result, neoboot=None, doctor=None):
+    def advise(self, health_result, neoboot=None, doctor=None, update=None):
         advice = []
 
         if health_result.get("ready"):
@@ -32,5 +32,11 @@ class AIAdvisor:
 
         if doctor and doctor.get("latest_crash"):
             advice.append("Crash log found. Use Kado Doctor to inspect possible causes.")
+
+        if update:
+            if update.get("update_available"):
+                advice.append("New Kado Panel version available: %s" % update.get("remote_version"))
+            elif update.get("ok"):
+                advice.append("Kado Panel is up to date.")
 
         return "\n".join(advice) if advice else "Safe Mode recommended."

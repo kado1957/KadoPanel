@@ -6,7 +6,7 @@ from Components.MenuList import MenuList
 from Components.ActionMap import ActionMap
 from Screens.MessageBox import MessageBox
 
-from .config import PANEL_NAME, VERSION, AUTHOR, EDITION, LEAD_TESTER
+from .config import PANEL_NAME, VERSION, EDITION, LEAD_TESTER
 from .logger import Logger
 from .healthcheck import HealthCheck
 from .aiadvisor import AIAdvisor
@@ -16,6 +16,7 @@ from .kadodoctor import KadoDoctor
 from .backup import BackupCenter
 from .restore import RestoreCenter
 from .cleaner import SmartCleaner
+from .updater import OnlineUpdater
 
 class KadoPanelMain(Screen):
     skin = """
@@ -31,15 +32,16 @@ class KadoPanelMain(Screen):
 
     def __init__(self, session):
         Screen.__init__(self, session)
-        Logger.write("Kado Panel v0.5.0 Started")
+        Logger.write("Kado Panel v0.6.0 Started")
 
         self["title"] = Label("%s - %s" % (PANEL_NAME, EDITION))
         self["subtitle"] = Label("Welcome Captain Essam | %s" % VERSION)
-        self["footer"] = Label("Lead Tester: %s | OpenBH 5.6.008 | NeoBoot 9.65" % LEAD_TESTER)
+        self["footer"] = Label("Lead Tester: %s | Online Update Check" % LEAD_TESTER)
 
         self.menu_items = [
             "Health Check",
             "AI Advisor",
+            "Check Update",
             "Kado Doctor",
             "Backup Preview",
             "Create Backup",
@@ -54,7 +56,7 @@ class KadoPanelMain(Screen):
             "Exit"
         ]
         self["menu"] = MenuList(self.menu_items)
-        self["status"] = Label("Captain Essam Edition\n\nBackup Center Pro is available.\n\nSelect an option and press OK.")
+        self["status"] = Label("Captain Essam Edition\n\nOnline Update Check is available.\n\nSelect an option and press OK.")
 
         self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.close}, -1)
 
@@ -65,8 +67,7 @@ class KadoPanelMain(Screen):
             result = HealthCheck().run()
             lines = ["Kado Health Check", ""]
             for name, ok, value in result.get("checks", []):
-                mark = "OK" if ok else "WARN"
-                lines.append("%s : %s (%s)" % (mark, name, value))
+                lines.append("%s : %s (%s)" % ("OK" if ok else "WARN", name, value))
             lines.append("")
             lines.append("System Status: %s" % ("READY" if result.get("ready") else "SAFE MODE"))
             self["status"].setText("\n".join(lines))
@@ -75,7 +76,19 @@ class KadoPanelMain(Screen):
             health = HealthCheck().run()
             neo = NeoBootManager().detect()
             doctor = KadoDoctor().inspect_latest()
-            self["status"].setText("Kado AI Advisor\n\n%s" % AIAdvisor().advise(health, neo, doctor))
+            update = OnlineUpdater().check()
+            self["status"].setText("Kado AI Advisor\n\n%s" % AIAdvisor().advise(health, neo, doctor, update))
+
+        elif current == "Check Update":
+            result = OnlineUpdater().check()
+            lines = ["Kado Online Update", ""]
+            lines.append("Current: %s" % result.get("current_version"))
+            lines.append("Remote : %s" % result.get("remote_version"))
+            lines.append("")
+            lines.append(result.get("message", "Unknown result"))
+            lines.append("")
+            lines.append("Note: This alpha checks updates only. Auto-install will be added later.")
+            self["status"].setText("\n".join(lines))
 
         elif current == "Kado Doctor":
             self["status"].setText(KadoDoctor().inspect_latest().get("report", "No report."))
@@ -84,8 +97,7 @@ class KadoPanelMain(Screen):
             self["status"].setText(BackupCenter().preview())
 
         elif current == "Create Backup":
-            result = BackupCenter().create_backup()
-            self["status"].setText(result.get("message", "Unknown backup result."))
+            self["status"].setText(BackupCenter().create_backup().get("message", "Unknown backup result."))
 
         elif current == "Restore Center":
             self["status"].setText(RestoreCenter().preview())
