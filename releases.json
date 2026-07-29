@@ -1,0 +1,13 @@
+{
+  "schema": 2,
+  "releases": [
+    {
+      "version": "3.3.0.6",
+      "code": "RC226.4.PY3",
+      "image": "OpenBH 5.6",
+      "python": "3.13.12",
+      "status": "stable-test",
+      "published": "2026-07-29"
+    }
+  ]
+}
