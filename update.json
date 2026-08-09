@@ -1,5 +1,5 @@
 {
-  "version": "3.7.1.61",
-  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.61/enigma2-plugin-extensions-kadopanel_3.7.1.61-github-self-updater-fullscreen-fhd-python3_all.ipk",
-  "notes": "تحديث رسمي يضيف التحديث المباشر لـ KadoPanel من GitHub داخل مركز التحديث."
+  "version": "3.7.1.62",
+  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.62/enigma2-plugin-extensions-kadopanel_3.7.1.62-test-self-update-fullscreen-fhd-python3_all.ipk",
+  "notes": "تحديث اختباري آمن للتحقق من عمل التحديث الذاتي لـ KadoPanel من GitHub إلى الإصدار 3.7.1.62."
 }
