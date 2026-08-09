@@ -1,14 +1,14 @@
 {
-  "version": "3.7.1.64",
-  "version_code": "3.7.1.64",
-  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.64/enigma2-plugin-extensions-kadopanel_3.7.1.64-startup-prompt-test-fullscreen-fhd-python3_all.ipk",
-  "sha256": "58340535a69b7ffa55adadf865e3ed598d28289592321401af5f76752c191fe2",
-  "size": "2.75 MB",
+  "version": "3.7.1.65",
+  "version_code": "3.7.1.65",
+  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.65/enigma2-plugin-extensions-kadopanel_3.7.1.65-startup-update-installer-fix-fullscreen-fhd-python3_all.ipk",
+  "sha256": "1c3b0ae8912eeec00672c6786f67e773009d16b4338b7bfcd698f0100b17f193",
+  "size": "2.76 MB",
   "type": "test",
-  "notes": "إصدار اختباري آمن للتحقق من ظهور نافذة التحديث التلقائي عند فتح KadoPanel 3.7.1.63.",
+  "notes": "إصلاح مسار تنفيذ التحديث من نافذة التنبيه التلقائي باستخدام نفس آلية مركز التحديث المجربة.",
   "changelog": [
-    "اختبار نافذة التنبيه التلقائي عند فتح KadoPanel.",
-    "عرض الانتقال من 3.7.1.63 إلى 3.7.1.64.",
-    "لا توجد تغييرات كبيرة على الوظائف؛ هذا إصدار تحقق فقط."
+    "إصلاح خطأ exec() عند الضغط على Yes في نافذة التحديث التلقائي.",
+    "استخدام نفس مسار فتح شاشة التحديث المجرب في مركز تحديث KadoPanel.",
+    "الحفاظ على فحص HTTPS وSHA256 ونقطة الاستعادة قبل التثبيت."
   ]
 }
