@@ -1,16 +1,14 @@
 {
-  "version": "3.7.1.63",
-  "version_code": "3.7.1.63",
-  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.63/enigma2-plugin-extensions-kadopanel_3.7.1.63-startup-update-prompt-unified-fullscreen-fhd-python3_all.ipk",
-  "sha256": "3a4a790b3894b2c5a544f8a7599a0a52cf0ba4589f8718629b8c60fe1aea2c92",
+  "version": "3.7.1.64",
+  "version_code": "3.7.1.64",
+  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.64/enigma2-plugin-extensions-kadopanel_3.7.1.64-startup-prompt-test-fullscreen-fhd-python3_all.ipk",
+  "sha256": "58340535a69b7ffa55adadf865e3ed598d28289592321401af5f76752c191fe2",
   "size": "2.75 MB",
-  "type": "feature",
-  "notes": "تنبيه تحديث تلقائي عند فتح KadoPanel + توحيد صفحات 1280x720 إلى Full HD مع تكبير الخط والعناصر.",
+  "type": "test",
+  "notes": "إصدار اختباري آمن للتحقق من ظهور نافذة التحديث التلقائي عند فتح KadoPanel 3.7.1.63.",
   "changelog": [
-    "إظهار نافذة تلقائية عند فتح KadoPanel إذا توفر إصدار أحدث.",
-    "عرض الإصدار الحالي والإصدار الجديد مع خيار التحديث الآن.",
-    "تحديث آمن بعد الموافقة مع تحقق SHA256 وإعادة تشغيل Enigma2.",
-    "توسيع صفحات معلومات النظام وطبيب كدو ووضع الإنقاذ والإعداد الذكي والصور الخام والمتجر إلى Full HD.",
-    "تكبير الخط والعناصر تلقائيًا على شاشات 1920x1080."
+    "اختبار نافذة التنبيه التلقائي عند فتح KadoPanel.",
+    "عرض الانتقال من 3.7.1.63 إلى 3.7.1.64.",
+    "لا توجد تغييرات كبيرة على الوظائف؛ هذا إصدار تحقق فقط."
   ]
 }
