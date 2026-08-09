@@ -1,14 +1,15 @@
 {
-  "version": "3.7.1.67",
-  "version_code": "3.7.1.67",
-  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.67/enigma2-plugin-extensions-kadopanel_3.7.1.67-full-startup-update-path-test-fullscreen-fhd-python3_all.ipk",
-  "sha256": "04c0334c262576dae972b4d07289a89060ed6b7a45dd8c0dd6493e9291c497b7",
+  "version": "3.7.1.68",
+  "version_code": "3.7.1.68",
+  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.68/enigma2-plugin-extensions-kadopanel_3.7.1.68-stable-self-update-fullscreen-fhd-python3_all.ipk",
+  "sha256": "4299b0f242e0a4a3ce4b8f21bcfa67621e3825d62781437b6f6b26292e40ea1b",
   "size": "2.76 MB",
-  "type": "test",
-  "notes": "إصدار اختبار نهائي لمسار التحديث التلقائي الكامل من نافذة بدء KadoPanel.",
+  "type": "stable",
+  "notes": "إصدار مستقر يعتمد مسار التحديث التلقائي الناجح ويحافظ على تصميم Full Screen FHD.",
   "changelog": [
-    "اختبار ظهور نافذة التحديث تلقائيًا عند فتح KadoPanel 3.7.1.66.",
-    "اختبار زر Yes باستخدام مسار Console + wget + opkg المجرب.",
-    "اختبار التثبيت وإعادة تشغيل Enigma2 تلقائيًا بعد النجاح."
+    "اعتماد مسار التحديث التلقائي الناجح من GitHub كما هو دون تعديل.",
+    "إزالة علامات الاختبار المؤقتة من الإصدار السابق.",
+    "الحفاظ على واجهة Full Screen FHD والخط الكبير المعتمد للتلفزيون.",
+    "اعتماد 3.7.1.68 كقاعدة مستقرة للتطويرات القادمة."
   ]
 }
