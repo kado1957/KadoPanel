@@ -1,16 +1,16 @@
 {
-  "version": "3.7.1.69",
-  "version_code": "3.7.1.69",
-  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.69/enigma2-plugin-extensions-kadopanel_3.7.1.69-unified-fullscreen-pages-fhd-python3_all.ipk",
-  "sha256": "48e4782bad41850157b34241d8b2303f362f7cd95b6cd66d39c43f2c99b7df65",
+  "version": "3.7.1.70",
+  "version_code": "3.7.1.70",
+  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.70/enigma2-plugin-extensions-kadopanel_3.7.1.70-final-ui-polish-fullscreen-fhd-python3_all.ipk",
+  "sha256": "5ee7e9350c665ba6c74871a4ae1ff79388a0979fd2f9e398b9b2ffa05ae2bab5",
   "size": "2.76 MB",
   "type": "feature",
-  "notes": "توحيد الصفحات الرئيسية الداخلية على Full Screen FHD مع الحفاظ على نظام التحديث الذاتي المستقر.",
+  "notes": "تشطيب نهائي لواجهات Full Screen FHD مع توحيد الخطوط والهوامش وأشرطة التحكم دون تعديل نظام التحديث الذاتي.",
   "changelog": [
-    "توسيع صفحة معلومات النظام تلقائيًا إلى Full Screen FHD.",
-    "توسيع فحص صحة النظام وطبيب كدو ووضع الإنقاذ إلى Full Screen FHD.",
-    "توسيع متجر كدو والإعداد الذكي للصورة والصور الخام إلى Full Screen FHD.",
-    "تكبير الخطوط والعناصر تلقائيًا على شاشات 1920x1080.",
-    "عدم تعديل مسار التحديث الذاتي الناجح المعتمد في 3.7.1.68."
+    "توحيد الحد الأدنى لأحجام الخطوط الداخلية لقراءة أوضح من التلفزيون.",
+    "تحسين الهوامش الآمنة ومنع العناصر من الاقتراب من أطراف الشاشة.",
+    "توحيد ارتفاعات أشرطة التعليمات والأزرار السفلية في الصفحات الداخلية.",
+    "الحفاظ على نفس تصميم Full Screen FHD المعتمد في 3.7.1.69.",
+    "عدم تعديل مسار التحديث الذاتي المستقر."
   ]
 }
