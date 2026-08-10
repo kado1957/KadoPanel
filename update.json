@@ -1,17 +1,15 @@
 {
-  "version": "3.7.1.74",
-  "version_code": "3.7.1.74",
-  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.74/enigma2-plugin-extensions-kadopanel_3.7.1.74-unified-royal-all-menus-fhd-python3_all.ipk",
-  "sha256": "e3854f21ab2e580c62aa54662cc02b15086e1e13eaaa27ac0711e0d399296370",
-  "size": "2.77 MB",
-  "type": "feature",
-  "notes": "توحيد جميع القوائم الرئيسية في KadoPanel على التصميم الملكي المعتمد Full HD.",
+  "version": "3.7.1.78",
+  "version_code": "3.7.1.78",
+  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.78/enigma2-plugin-extensions-kadopanel_3.7.1.78-complete-english-language-purity-fhd-python3_all.ipk",
+  "sha256": "511afbf74064ff9a2c2f07fc953275ba67440776dc3b044ddb179897e3219ce5",
+  "size": "2.46 MB",
+  "type": "fix",
+  "notes": "إصلاح شامل للغة الإنجليزية في KadoPanel مع إبقاء التصميم الملكي المعتمد دون تغيير.",
   "changelog": [
-    "توحيد 18 قائمة رئيسية على قالب Royal Full HD واحد.",
-    "ترويسة ثابتة وقائمة جانبية موحدة وشريط عنوان أزرق ملكي.",
-    "مناطق محتوى وبطاقات منفصلة لمنع تداخل النصوص وخروجها من المستطيلات.",
-    "شريط تعليمات مستقل ومسافة آمنة ثابتة عن توقيع Captain Essam.",
-    "إعادة بناء متجر كدو ومعلومات النظام وطبيب كدو ومراكز التحديث والتراجع والتنظيف وNeoBoot.",
-    "الحفاظ على نظام التحديث الذاتي الناجح دون تعديل."
+    "عند اختيار English أصبحت عبارة Welcome to KadoPanel تظهر بالإنجليزية في الواجهة الرئيسية.",
+    "تم تمرير النصوص الثابتة داخل واجهات Enigma2 عبر طبقة الترجمة، وليس النصوص الديناميكية فقط.",
+    "تم توحيد Screen وLabel وMenuList وMessageBox القديمة مع طبقة الترجمة الموحدة.",
+    "اللغة العربية والتصميم Full Screen FHD المعتمد لم يتغيرا."
   ]
 }
