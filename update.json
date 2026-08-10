@@ -1,16 +1,18 @@
 {
-  "version": "3.7.1.71",
-  "version_code": "3.7.1.71",
-  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.71/enigma2-plugin-extensions-kadopanel_3.7.1.71-safe-margins-fullscreen-fhd-python3_all.ipk",
-  "sha256": "56ae025b2fffb1c53af0b5ac3e6e44ddbcc2bcb956505c7d9f2c0ac63e12e85e",
+  "version": "3.7.1.72",
+  "version_code": "3.7.1.72",
+  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.72/enigma2-plugin-extensions-kadopanel_3.7.1.72-precision-layout-fullscreen-fhd-python3_all.ipk",
+  "sha256": "c3d6e2d80d2ebd054131cc2f4f92d9a127f38e3890b1618f85207103360ffcbc",
   "size": "2.77 MB",
   "type": "fix",
-  "notes": "إصلاح الهوامش الآمنة ومنع قص النصوص والعناصر عند أعلى وأسفل وأقصى يمين صفحات Full Screen FHD.",
+  "notes": "إصلاح دقيق لتوزيع العناصر السفلية والمحاذاة في صفحات Full Screen FHD.",
   "changelog": [
-    "إبعاد النصوص والعناصر عن الحواف العليا والسفلى واليمنى.",
-    "رفع أشرطة التعليمات السفلية داخل المساحة الآمنة.",
-    "معالجة قص النصوص في الإعداد الذكي للصورة ومتجر كدو ومركز التحديث.",
-    "معالجة هوامش مدير NeoBoot والتنظيف الذكي ومركز التراجع.",
-    "الحفاظ على تصميم Full Screen FHD ونظام التحديث الذاتي دون تغيير."
+    "إعادة محاذاة ميزات الأمان المتقدمة داخل المستطيلات.",
+    "إظهار تفاصيل مركز التراجع ومركز التحديث كاملة دون قص.",
+    "إظهار المجلد بالكامل في مدير NeoBoot وآخر تعديل في المنظف الذكي.",
+    "إعادة تنظيم أسفل متجر كدو ومنع تداخل التصنيف والأزرار وبطاقة الإضافة.",
+    "إظهار تعليمات الإعداد الذكي للصورة وطبيب كدو بالكامل.",
+    "فصل تعليمات معلومات النظام عن توقيع Captain Essam.",
+    "الحفاظ على الخط الكبير وFull Screen FHD."
   ]
 }
