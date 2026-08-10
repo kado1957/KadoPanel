@@ -1,16 +1,16 @@
 {
-  "version": "3.7.1.70",
-  "version_code": "3.7.1.70",
-  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.70/enigma2-plugin-extensions-kadopanel_3.7.1.70-final-ui-polish-fullscreen-fhd-python3_all.ipk",
-  "sha256": "5ee7e9350c665ba6c74871a4ae1ff79388a0979fd2f9e398b9b2ffa05ae2bab5",
-  "size": "2.76 MB",
-  "type": "feature",
-  "notes": "تشطيب نهائي لواجهات Full Screen FHD مع توحيد الخطوط والهوامش وأشرطة التحكم دون تعديل نظام التحديث الذاتي.",
+  "version": "3.7.1.71",
+  "version_code": "3.7.1.71",
+  "url": "https://github.com/kado1957/KadoPanel/releases/download/v3.7.1.71/enigma2-plugin-extensions-kadopanel_3.7.1.71-safe-margins-fullscreen-fhd-python3_all.ipk",
+  "sha256": "56ae025b2fffb1c53af0b5ac3e6e44ddbcc2bcb956505c7d9f2c0ac63e12e85e",
+  "size": "2.77 MB",
+  "type": "fix",
+  "notes": "إصلاح الهوامش الآمنة ومنع قص النصوص والعناصر عند أعلى وأسفل وأقصى يمين صفحات Full Screen FHD.",
   "changelog": [
-    "توحيد الحد الأدنى لأحجام الخطوط الداخلية لقراءة أوضح من التلفزيون.",
-    "تحسين الهوامش الآمنة ومنع العناصر من الاقتراب من أطراف الشاشة.",
-    "توحيد ارتفاعات أشرطة التعليمات والأزرار السفلية في الصفحات الداخلية.",
-    "الحفاظ على نفس تصميم Full Screen FHD المعتمد في 3.7.1.69.",
-    "عدم تعديل مسار التحديث الذاتي المستقر."
+    "إبعاد النصوص والعناصر عن الحواف العليا والسفلى واليمنى.",
+    "رفع أشرطة التعليمات السفلية داخل المساحة الآمنة.",
+    "معالجة قص النصوص في الإعداد الذكي للصورة ومتجر كدو ومركز التحديث.",
+    "معالجة هوامش مدير NeoBoot والتنظيف الذكي ومركز التراجع.",
+    "الحفاظ على تصميم Full Screen FHD ونظام التحديث الذاتي دون تغيير."
   ]
 }
